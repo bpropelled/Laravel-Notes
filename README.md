@@ -155,7 +155,8 @@ php artisan make:model Task -m -c
 ## Building SCHEMAS in the migration file
 The table builder contains a variety of column types that you may use when building your tables:
 
-## Command |	Description
+## | Command |	Description |
+|---|--------|--------------|
 $table->bigIncrements('id');	| Incrementing ID using a "big integer" equivalent
 $table->bigInteger('votes');	| BIGINT equivalent to the table
 $table->binary('data');	| BLOB equivalent to the table
