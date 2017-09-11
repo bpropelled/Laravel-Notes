@@ -116,10 +116,10 @@ Next, add the ArtisanViewServiceProvider to your providers array in config/app.p
 ```
 ## Create a view
 
-# Create a view 'index.blade.php' in the default directory
+#### Create a view 'index.blade.php' in the default directory
 $ php artisan make:view index
 
-# Create a view 'index.blade.php' in a subdirectory ('pages')
+#### Create a view 'index.blade.php' in a subdirectory ('pages')
 $ php artisan make:view pages.index
 
 ## Running Migrations
