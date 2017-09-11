@@ -155,18 +155,20 @@ php artisan make:model Task -m -c
 ## Building SCHEMAS in the migration file
 The table builder contains a variety of column types that you may use when building your tables:
 
-## | Command |	Description |
-|---|--------|--------------|
-$table->bigIncrements('id');	| Incrementing ID using a "big integer" equivalent
+**Command** |  **Description**
+--- | ---
+$table->bigIncrements('id');	|  Incrementing ID using a "big integer" equivalent
 $table->bigInteger('votes');	| BIGINT equivalent to the table
 $table->binary('data');	| BLOB equivalent to the table
-$table->boolean('confirmed');| 	BOOLEAN equivalent to the table
-$table->char('name', 4);	| CHAR equivalent with a length
-$table->date('created_at');| 	DATE equivalent to the table
+$table->boolean('confirmed');  | 	BOOLEAN equivalent to the table
+$table->char('name', 4);	|  CHAR equivalent with a length
+$table->date('created_at');  | 	DATE equivalent to the table
 $table->dateTime('created_at');	| DATETIME equivalent to the table
 $table->decimal('amount', 5, 2);	| DECIMAL equivalent with a precision and scale
-$table->double('column', 15, 8);| 	DOUBLE equivalent with precision, 15 digits in total and 8 after the decimal point
-$table->enum('choices', ['foo', 'bar']);| 	ENUM equivalent to the table
+$table->double('column', 15, 8);  | 	DOUBLE equivalent with precision, 15 digits in total and 8 after the decimal point
+$table->enum('choices', ['foo', 'bar']);  | 	ENUM equivalent to the table
+
+
 $table->float('amount');	FLOAT equivalent to the table
 $table->increments('id');	Incrementing ID to the table (primary key)
 $table->integer('votes');	INTEGER equivalent to the table
