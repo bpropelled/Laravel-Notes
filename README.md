@@ -140,6 +140,15 @@ alternatively, you can tell artisan to make the table at the same time by doing 
 php artisan make:migration migration_name --create=name_of_table
 ```
 
+or you can make a model and migration together using this format
+```cmd 
+php artisan make:model Task -m
+```
+Even add a controller to the build as well
+```cmd
+php artisan make:model Task -m -c
+```
+
 ### NOTE: name your tables with plural in mind and model in singualr form and eloquent will associate the mdoel with the db
 #### EG. Database name: tasks  Model name: Task
 
@@ -151,3 +160,21 @@ To start a Tinker CMD, do this:
 ```cmd
 php artisan tinker
 ```
+
+An exmaple of interacting with a database using tinker is this.  Say you have a database called "tasks"
+```cmd
+//Show all records in the tasks database
+>> App\Task::all();
+
+//All tasks where ID > 1 and get results
+>> App\Task::where('id', '>', '2')->get();
+
+//Get the body of every record
+>> App\Task::pluck('task_name');
+
+//Get first of the result using collections helpers 'first()'
+>> App\Task::pluck('task_name')->first();
+
+```
+
+
