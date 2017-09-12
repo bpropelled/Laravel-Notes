@@ -217,7 +217,64 @@ An exmaple of interacting with a database using tinker is this.  Say you have a 
 ```
 
 
+## Getting From DB
+To get items from the DB in Tinker, you can do CRUD tasks and view the db
+```cmd
+php artisan tinker
 
+//Get all Entries
+App\Task::all();
+
+//Get a certain record
+App\Task::where('id', 1)->get();
+
+**Dont forget the get() part or nothing will be fetched
+```
+### Create a Record in Tinker
+``cmd
+$task = new App\Task;
+
+$task->name = "Task Name";
+$task->save();
+```
+
+
+## Controllers
+- Controllers are used to receive a request and it will figure out how to complie the result
+
+- Controller Layer Delegates
+- Model Layer is responsible for the domain and fetching any dat we require
+- The presentation layer is the html and views
+
+A simple controller looks like this
+```php
+Route::get('/task', 'TaskController@methodName');
+//stating a request and calling a controller file the '@' then the method name in the controller
+```
+
+### Making a controller in Artisan
+```cmd
+php artisan make:controller TasksController
+
+// to call help on this use
+php artisan make:controller -h
+```
+
+
+
+### Things to Leanr More About 
+- Query Scopes
+```php
+//Model Method
+public function isComplete(){
+ return App\Task::where('id', 0);
+}
+// call is using App\Task::isComplete
+
+or use scope method by prepending a function name with 'scope'
+public function scopeiscomplete($query, $value){
+return $query->where('complete', 1)->get();
+}
 
 # Some things to know
 1. Sometimes when deleting a file, like a model or migration, the autoload can cause when running artisan commands.  To fix this run:
