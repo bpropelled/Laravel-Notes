@@ -11,6 +11,19 @@ this installs laravel using PHP 5.6, you can also do this for PHP 7 dependencies
 laravel new nameOfProject
 ```
 
+Important.  if you get an error running php artisan migrate warning you about the user table existing.  do this:
+
+Add this to the AppServiceProvider.php file
+
+```php
+use Illuminate\Support\Facades\Schema;
+
+public function boot(){  
+
+Schema::defaultStringLength(191);
+
+}
+```
 ## Laravel Server
 to start the Laravel server do this
 ```cmd
@@ -228,10 +241,11 @@ App\Task::all();
 //Get a certain record
 App\Task::where('id', 1)->get();
 
-**Dont forget the get() part or nothing will be fetched
+*Dont forget the get() part or nothing will be fetched
 ```
+
 ### Create a Record in Tinker
-``cmd
+```cmd
 $task = new App\Task;
 
 $task->name = "Task Name";
@@ -247,6 +261,7 @@ $task->save();
 - The presentation layer is the html and views
 
 A simple controller looks like this
+
 ```php
 Route::get('/task', 'TaskController@methodName');
 //stating a request and calling a controller file the '@' then the method name in the controller
@@ -258,9 +273,8 @@ php artisan make:controller TasksController
 
 // to call help on this use
 php artisan make:controller -h
+
 ```
-
-
 
 ### Things to Leanr More About 
 - Query Scopes
@@ -275,9 +289,10 @@ or use scope method by prepending a function name with 'scope'
 public function scopeiscomplete($query, $value){
 return $query->where('complete', 1)->get();
 }
-
+```
 # Some things to know
 1. Sometimes when deleting a file, like a model or migration, the autoload can cause when running artisan commands.  To fix this run:
+
 ```cmd
 composer dump-autoload
 ```
