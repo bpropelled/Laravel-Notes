@@ -41,6 +41,11 @@ This is where we would go to add or change our applications configuration parame
 ## Public
 This is where you put the application assets like images and scripts (JS and CSS)
 
+##Database
+This folder will handle creating and modifying the database including migrations and seeding the database with dummy data
 
 ## Vendor 
 this is where all the application's dependencies are located, like third party libraries
+
+##**Important**
+One thing to keep in mind with the **PUBLIC** folder is that once we deploy our app to production environment, we should point our web server document root to the *index.php* file located in the reosurces folder.  The reason for this is that this file is the entry point for our whole application. The is the file in charge of loading laravel into memory and basically loading our application. 
