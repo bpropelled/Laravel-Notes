@@ -1,4 +1,4 @@
-# LAravel Structure
+# Laravel Structure
 
 App: This directory is the meat of the application and contains the core code.
 Console: This directory contains all the custom Artisan commands created using make:command
@@ -14,3 +14,20 @@ Routes: This directory contains all routes definitions for the application. php 
 Storage: This directory contains blade templates, session files, cache files and other.
 Tests: This directory contains all the test files
 Vendor: This directory contains all composer dependencies
+
+## App
+This is where most of the programming will happen.  this folder includes our controllers and models
+
+ - ### Models and Controllers
+ Models are placed in the root level of the app folder and controllers are inside the HTTP/Controllers folder in the app folder
+
+## Config
+This is where we would go to add or change our applications configuration parameters
+
+
+## Public
+This is where you put the application assets like images and scripts (JS and CSS)
+
+
+## Vendor 
+this is where all the application's dependencies are located, like third party libraries

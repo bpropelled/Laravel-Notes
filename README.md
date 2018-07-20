@@ -13,7 +13,7 @@ laravel new nameOfProject
 
 Important.  if you get an error running php artisan migrate warning you about the user table existing.  do this:
 
-Add this to the AppServiceProvider.php file
+Add this to the app/providers/AppServiceProvider.php file
 
 ```php
 use Illuminate\Support\Facades\Schema;
