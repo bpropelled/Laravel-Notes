@@ -6,10 +6,9 @@ Artisan is also helpful by having a built in server to deploy a local laravel ap
 
 ##  Integrated Web Server
 ### Run the Web Server using Artisan
-     
     php artisan serve 
     
-##Maintenance Modes
+## Maintenance Modes
 ### Put the application in **Maintenance Mode**.  This is useful when making changes or hot fixes to an application in production.  Simply take it down to make the changes
    
     php artisan down 
@@ -31,15 +30,18 @@ When making changes to the application, some times things can get cached and not
 *One thing to notes is the style of the controller name.  Controller names should start with a capital letter 
 
 ##Models
+When making models it is important to name them properly and not like a moron.  Name them so it is clear that the name is what they are/do.  Also, don't pluralize the model names **eg. A model for the users of an applcation should be named User**
 
-## #Create a Model without any migrations
+### Create a Model without any migrations
     php artisan make:model Task
 
 ### Create a Model with Migration
+    php artisan make:model Task -m
+This will create the model file as well as a migration template file for this model
 
-##Views
+## Views
 ### To make views with Artisan
-- to make views using artisan, go to https://github.com/svenluijten/artisan-view
+- to make views using artisan, go to [https://github.com/svenluijten/artisan-view]('https://github.com/svenluijten/artisan-view')
 
 Usin compsoer
 ```cmd
