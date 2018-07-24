@@ -32,3 +32,5 @@ Route::get('/home', function(){
     $data['version'] = '0.1';
     return view('welcome', $data);
 });
+
+Route::get('/yo', 'PageController@yo');
