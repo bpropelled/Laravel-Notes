@@ -5,7 +5,7 @@ Artisan is Laravels main development tool.  Artisan can help easily generate **C
 Artisan is also helpful by having a built in server to deploy a local laravel application, run database migrations, clear application cache.
 
 ## Getting Help with Artisan Commands
-If you ever need help or looking for an idea of what a command does you can preceed the command with --help in artisan.  
+If you ever need help or looking for an idea of what a command does you can precede the command with --help in artisan.  
 Example: Need help for make controller commands
     php artisan help make:controller
 
@@ -15,8 +15,11 @@ Okay, so typing the php artisan starts to really suck after a while, so here is 
 doskey pa=php artisan $*
 ```
 **Now you just have to use pa like this**
+
     pa serve
+
 which is the equivalent of 
+
     php artisan serve
 
 ##  Integrated Web Server

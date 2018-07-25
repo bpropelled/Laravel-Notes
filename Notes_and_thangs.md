@@ -60,3 +60,14 @@ For example, when using Xampp or Laravel's Artisan web server, you typically hav
 ## Make a controller with api boilerplate methods (Show, store,update,destroy)
 To do this using artisan, simply add "--api" to the end of the artisan command like so
     php artisan 
+
+## Escaping Characters
+In most cases, you want to escape your characters to avoid security risks by embedding code into your app.  When using the template literal syntax for passing data to the view, laravel's default syntax automatically escapes it for you.  this is how you use template literals with auto escape.
+
+```html
+<div>{{ $variableName }}</div> 
+```
+But lets say we want to have unescaped characters like, maybe an html or span element.  Use **__!!__**
+do this 
+```html
+<div>{{ !! $variableName !!}}</div> 
