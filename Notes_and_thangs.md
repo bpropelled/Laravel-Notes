@@ -71,3 +71,15 @@ But lets say we want to have unescaped characters like, maybe an html or span el
 do this 
 ```html
 <div>{{ !! $variableName !!}}</div> 
+```
+## Compact
+If you want to convert a group of variables to an associatative array, you can use the compact() method.
+```php
+$name = 'Tom';
+$age = '33';
+$sex = 'male';
+
+return view('pages.about')->compact('name','age','sex');
+```
+
+The parameters of the compact function look for variables and turns them into an array.
