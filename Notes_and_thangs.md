@@ -83,3 +83,13 @@ return view('pages.about')->compact('name','age','sex');
 ```
 
 The parameters of the compact function look for variables and turns them into an array.
+
+## Blade and Semi-colons
+When using blade methods in html, omit the semi colon
+eg:
+```html
+@extends('app')
+<!-- And -->
+@section('content')
+```
+

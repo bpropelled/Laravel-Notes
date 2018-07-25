@@ -27,5 +27,18 @@ class PageController extends Controller
 
         return view('pages.about', $data);
     }
+
+public function contact(){
+    $data = [
+        'name' => 'Brendon',
+        'age' => '33'
+    ];
+$people = [
+    'tom','jack','steve'
+];
+
+    return view('pages.contact', compact('people'));
+}
+
 }
 

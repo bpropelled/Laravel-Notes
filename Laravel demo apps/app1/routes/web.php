@@ -36,3 +36,4 @@
 // Route::get('/yo', 'PageController@yo');
 
 Route::get('/about', 'PageController@about');
+Route::get('/contact', 'PageController@contact');
