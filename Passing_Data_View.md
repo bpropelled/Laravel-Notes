@@ -90,3 +90,8 @@ And another way is to pass a data variable in the view function.
     }
 ```
 Doing this does the same ting, translates the arrays names to variable names and the values to values.
+
+## Adding Custom CSS and JS that are in the public folder
+```html
+  <link rel="stylesheet" type="text/css" href="{{asset('css/yourcss.css')}}"/>   
+```
