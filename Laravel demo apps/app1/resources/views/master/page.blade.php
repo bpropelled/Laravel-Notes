@@ -10,7 +10,8 @@
 
     @yield('content')
     <hr>
-    @yield('footer');
+    @yield('footer'); 
+    
 </body>
 
 </html>
