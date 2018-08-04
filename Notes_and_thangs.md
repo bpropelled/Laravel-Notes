@@ -93,3 +93,69 @@ eg:
 @section('content')
 ```
 
+## Use the Built in CARBON library to do current date time
+Laravel comes with a date/time library builtin called Carbon.  Carbon is friggin sweet and has a bunch of cool methods to work with.  
+```php
+$right_now = Carbon\Carbon::now();
+```
+
+## Aborting the Response
+Sometimes when using a URI in a route , you can use a cool method called "abort()" and pass it a response, in this case, it will send the user to a 404 page if the id is not found. that is if there is no article with the passed id from the URI
+```php
+//in routes/web.php
+Route::get('articles/{id}', 'ArticlesController@show');
+//in the Controller
+    public function show($id){
+        $article = Article::find($id);
+            if($article){
+                return view('articles.show')->with('article', $article);
+            }else{
+                abort(404);
+            } 
+    } 
+```
+
+**But even better is that Laravel already has a method for this purpose called FindorFail**
+
+```php
+//in the Controller
+    public function show($id){
+        $article = Article::findOrFail($id);
+                return view('articles.show')->with('article', $article);
+    } 
+
+```
+
+## Use dynamic a href
+Let's say you are using URIs and you need to include a link to each article in html, there are a couple ways you can do this
+
+**Using a URI**
+```html
+@foreach ($articles as $a)
+    <h1><a href="{{ $a->id }}">{{ $a->title }}</a></h1>
+    <p>{{ $a->body }}</p>
+@endforeach
+```
+**Using a Controller Method**
+```html
+@foreach ($articles as $a)
+    <h1><a href="{{ action('ArticlesController@show', [$a->id]) }}">{{ $a->title }}</a></h1>
+    <p>{{ $a->body }}</p>
+@endforeach
+```
+
+**Using a URL Function**
+```html
+@foreach ($articles as $a)
+    <h1><a href="{{ url('/articles', $a->id) }}">{{ $a->title }}</a></h1>
+    <p>{{ $a->body }}</p>
+@endforeach
+```
+
+
+## Routes are not working
+Sometimes I created new routes and controller and views properly but when i go to see them, i get a 404 page.  ::poo:: So after some searching, i found this that did the trick and it relates to the order you place your routes.  weird eh.  The general rule of laravel routing is to __**place specific routes before wildcard routes**__ that are related. 
+[Order of routes in web.php](https://laracasts.com/discuss/channels/laravel/order-of-routes-in-webphp?page=1)
+
+#### Anything with a parameter should be considered a wildcard,  ####
+

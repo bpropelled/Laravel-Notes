@@ -13,7 +13,7 @@ class PageController extends Controller
     public function returnView(){
         return view('welcome');
     }
-
+    
     public function about(){
         // $name = 'Brendon';
 

@@ -37,3 +37,9 @@
 
 Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');
+
+Route::get('/articles','ArticlesController@index');
+Route::get('/articles/create', 'ArticlesController@create');
+Route::get('/articles/{id}', 'ArticlesController@show');
+
+
