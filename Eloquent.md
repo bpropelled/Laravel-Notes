@@ -1,5 +1,8 @@
 ##  Eloquent Notes
-Eloquent is laravel's Active Record Implementation.  Eloquent provides a clean abstraction from raw SQL code
+Eloquent is laravel's Active Record Implementation.  Eloquent provides a clean abstraction from raw SQL code 
+
+### Awesome Cheat Sheet for Eloquent Re
+[Eloquent Relationships Cheat Sheet – Hacker Noon](https://hackernoon.com/eloquent-relationships-cheat-sheet-5155498c209)
 
 ## What is Active Record
 When it comes to working with data in an application, you are probably going to need an ORM in one form or another. An ORM is the layer between the database and your application. By using an ORM, a lot of the hard work of creating, updating, reading and deleting from the database is taken care for us.

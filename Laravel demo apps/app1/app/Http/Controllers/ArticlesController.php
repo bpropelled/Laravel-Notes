@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use  Request;
 
 //Call the DB instance
 use App\Article;
@@ -24,8 +24,30 @@ class ArticlesController extends Controller
     }
 
     public function create(){
-        return 'hey';
+        return view('articles.create');
     }
+
+    public function store(\App\Http\Requests\createArticleRequest $request){
+
+
+
+        $input = $request->all();
+        // Article::create($input);
+        // //or Article::create(['title' => $input['title']);
+
+        Article::create($input);
+        return redirect('articles');
+}
+
+public function latest(){
+    $latest = Article::latest()->get();
+    return view('articles.index')->with('articles', $latest);
+}
+
+public function api (){
+    $request = new Request;
+ return response()->json(['name' => 'brendon']);
+}
 
 
 
