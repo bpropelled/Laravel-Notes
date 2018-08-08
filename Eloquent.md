@@ -26,10 +26,11 @@ Here is a simple command for Artisan that will make an Eloquent model for us
 php artisan make:model Article
 ```
 
-** By default, models created using Artisan will be placed in the root of the "APP" folder
+** By default, models created using Artisan will be placed in the root of the "APP" folder **
 
 The above code will create a boilerplate model that inherits the Eloquent class.  The class is "extending" the Model class of the Eloquent Library
-``php
+
+```php
 <?php
 
 namespace App;
