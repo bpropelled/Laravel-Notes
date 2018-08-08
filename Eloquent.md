@@ -1,7 +1,7 @@
 ##  Eloquent Notes
 Eloquent is laravel's Active Record Implementation.  Eloquent provides a clean abstraction from raw SQL code 
 
-### Awesome Cheat Sheet for Eloquent Re
+### Awesome Cheat Sheet for Eloquent Relationships
 [Eloquent Relationships Cheat Sheet – Hacker Noon](https://hackernoon.com/eloquent-relationships-cheat-sheet-5155498c209)
 
 ## What is Active Record
