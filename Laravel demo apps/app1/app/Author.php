@@ -8,4 +8,8 @@ class Author extends Model
 {
  
     protected $fillable = ['name', 'description'];
+
+    public function articles(){
+        return $this->hasMany(Car::class);
+    }
 }

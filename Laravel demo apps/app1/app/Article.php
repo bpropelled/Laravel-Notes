@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $fillable = ['title', 'body'];
+
+    public function authors(){
+        return $this->belongsTo(Author::class);
+    }
+
 }

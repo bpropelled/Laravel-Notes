@@ -159,3 +159,52 @@ Sometimes I created new routes and controller and views properly but when i go t
 
 #### Anything with a parameter should be considered a wildcard,  ####
 
+## Make all items in the model Mass Assignable
+As you have learned, when building a model and you want to use the Eloquent create() method to mass assign records to the database you have to identify which of these fields are mass assignable, meaning which of them is the user allowed to change.
+```php
+$fillable = ['name','title','published_on'];
+```
+And on the same idea, you can identify which fields SHOULD NOT be mass assignable using the $guarded variable.
+```php
+$guarded = ['username', 'id', 'post_id'];
+```
+** But here is a trick if you want all items in your model to be mass assignable without having to declare all the fields in the $fillable array. According to the laravel docs, you can achive this by simply declaring the $guarded variable as an empty array.
+```php
+$guarded = [];
+```
+Now all fields of that model are now mass assignable.
+
+
+## Performance
+
+### N+1 Problem
+[Eloquent: Relationships - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/5.6/eloquent-relationships#eager-loading)
+[The N+1 Problem](https://laracasts.com/lessons/eager-loading)
+When working with relational records, one major performance problem will arise when querying the database for records with lots of children records.  What happens with a query like this is that a query will be made to grab the parent records, but all the children records will also have their own query.  So if we had an author with five related children records (books), the query will be 6 (N+1), one fo rthe author and 5 more for the children records.  Imagine if we had hundreds of books or products to query. yikes, homey don't play that.
+
+So Laravel has this nice Eloquent method to use instead of ->all().  The method with the ->with() method and the idea of this method is called ** Eager Loading **
+
+##### Without Eager Loading
+```php
+$books = App\Book::all();
+
+foreach ($books as $book) {
+    echo $book->author->name;
+}
+```
+
+##### With Eager Loading
+```php
+$books = App\Book::with('author')->get();
+
+foreach ($books as $book) {
+    echo $book->author->name;
+}
+```
+
+More on Eager Loading and the available methods
+[Eloquent: Relationships - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/5.6/eloquent-relationships#eager-loading)
+
+
+
+
