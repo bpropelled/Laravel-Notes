@@ -46,3 +46,10 @@ Route::get('/articles/{id}', 'ArticlesController@show');
 
 Route::post('articles', 'ArticlesController@store');
 
+
+Route::get('mfgs', 'MfgController@all');
+Route::get('cars', 'MfgController@cars');
+Route::get('cars/{id}', 'MfgController@show');
+
+
+Route::get('lease', 'LeasesController@index');

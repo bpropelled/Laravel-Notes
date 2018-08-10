@@ -195,7 +195,7 @@ foreach ($books as $book) {
 
 ##### With Eager Loading
 ```php
-$books = App\Book::with('author')->get();
+$books = App\Book::with('author')->
 
 foreach ($books as $book) {
     echo $book->author->name;
