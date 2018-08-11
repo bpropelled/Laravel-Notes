@@ -40,5 +40,6 @@ $people = [
     return view('pages.contact', compact('people'));
 }
 
+
 }
 

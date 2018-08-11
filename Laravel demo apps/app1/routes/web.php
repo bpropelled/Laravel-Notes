@@ -34,7 +34,7 @@
 // });
 
 // Route::get('/yo', 'PageController@yo');
-
+Route::get('homey', 'PageController@index');
 Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');
 
