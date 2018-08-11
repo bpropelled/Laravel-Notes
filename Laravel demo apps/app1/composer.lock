@@ -4,8 +4,47 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "08f5d6be8ab57673009336b3d7fa897d",
+    "content-hash": "0e502589b288661fe037a2f7e5af0355",
     "packages": [
+        {
+            "name": "brooklab/quickbase",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BrookLab/quickbase-php.git",
+                "reference": "6012302f873603c1591b50002b452c8d9f8834f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BrookLab/quickbase-php/zipball/6012302f873603c1591b50002b452c8d9f8834f5",
+                "reference": "6012302f873603c1591b50002b452c8d9f8834f5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=4.7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "quickbase.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joshua McGinnis",
+                    "email": "joshua@mcginn.is",
+                    "homepage": "http://www.brooklab.com"
+                }
+            ],
+            "description": "A full-featured PHP wrapper for the QuickBase API.",
+            "homepage": "https://github.com/BrookLab/quickbase-php",
+            "time": "2013-03-04 01:26:24"
+        },
         {
             "name": "dnoegel/php-xdg-base-dir",
             "version": "0.1",
@@ -4102,7 +4141,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "brooklab/quickbase": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

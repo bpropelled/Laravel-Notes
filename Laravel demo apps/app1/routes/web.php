@@ -38,7 +38,7 @@
 Route::get('/about', 'PageController@about');
 Route::get('/contact', 'PageController@contact');
 
-Route::get('/articles','ArticlesController@index');
+Route::get('/articles','ArticlesController@index')->middleware('auth');
 Route::get('/articles/latest','ArticlesController@latest');
 Route::get('/articles/create', 'ArticlesController@create');
 Route::get('/articles/api', 'ArticlesController@api');
@@ -53,3 +53,9 @@ Route::get('cars/{id}', 'MfgController@show');
 
 
 Route::get('lease', 'LeasesController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
