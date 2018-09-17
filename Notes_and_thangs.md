@@ -206,5 +206,10 @@ More on Eager Loading and the available methods
 [Eloquent: Relationships - Laravel - The PHP Framework For Web Artisans](https://laravel.com/docs/5.6/eloquent-relationships#eager-loading)
 
 
+## Handle inbound requests like Webhooks and Email to Scripts
+Simply add this line
+```php
+@file_get_contents("php://input")
+```
 
 
