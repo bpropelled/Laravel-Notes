@@ -95,3 +95,13 @@ Doing this does the same ting, translates the arrays names to variable names and
 ```html
   <link rel="stylesheet" type="text/css" href="{{asset('css/yourcss.css')}}"/>   
 ```
+
+## Get PAssword Has
+You can get the hashedPassword like this:
+
+$hashedPassword = Auth::user()->getAuthPassword();
+And check like this:
+
+if (Hash::check('password', $hashedPassword)) {
+    // The passwords match...
+}

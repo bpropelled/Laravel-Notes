@@ -213,3 +213,31 @@ Simply add this line
 ```
 
 
+## Check if Data Exists in Blade template 
+
+Try checking if the variable is empty:
+```html
+@if(empty($myvar))
+    <p>Data does not exist</p>
+@else
+    <p>Your data is here!</p>
+@endif
+```
+
+```html
+{{ $checkvariable or 'not-exist' }}
+```
+[link do Docs]('https://laravel.com/docs/5.2/blade#displaying-data')
+
+##### Another way to do this according to the documentation
+**Echoing Data If It Exists**
+Sometimes you may wish to echo a variable, but you aren't sure if the variable has been set. We can express this in verbose PHP code like so:
+```html
+{{ isset($name) ? $name : 'Default' }}
+```
+However, instead of writing a ternary statement, Blade provides you with the following convenient short-cut:
+```html
+{{ $name or 'Default' }}
+
+```
+In this example, if the $name variable exists, its value will be displayed. However, if it does not exist, the word Default will be displayed.

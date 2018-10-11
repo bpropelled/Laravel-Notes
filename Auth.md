@@ -22,3 +22,12 @@ Route::group(['middleware' => ['auth']], function() {
     // your routes
 });
 ```
+## Auth Middleware in Controller Construct
+Using the auth middleware in ChatsController's __contruct() indicates that all the methods with the controller will only be accessible to authorized users. 
+
+```php
+public function __construct()
+{
+  $this->middleware('auth');
+}
+```
