@@ -2,6 +2,20 @@
 
 ## Using Blade to Easily Create Master View Pages and Extend Them
 
+## Check current URL for String and conditional show content
+```html
+@if (Request::path() == '/view')
+    // code
+@endif
+
+```
+
+
+
+
+
+
+
 
 
 ### Blade Cheat Sheet

@@ -100,5 +100,24 @@ Of course, the schema builder contains a variety of column types that you may sp
 
 
 
+## Modifier Migrations
+```php
+Schema::table('users', function (Blueprint $table) {
+    $table->string('name', 50)->nullable()->change();
+});
+//or if you want to rename
 
+Schema::table('users', function (Blueprint $table) {
+    $table->renameColumn('from', 'to');
+});
+//or if dropping
 
+Schema::table('users', function (Blueprint $table) {
+    $table->dropColumn(['votes', 'avatar', 'location']);
+});
+//to add simply
+
+Schema::table('users', function (Blueprint $table) {
+    $table->string('email');
+});
+```
